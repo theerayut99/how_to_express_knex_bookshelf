@@ -39,18 +39,18 @@ CMD ["node", "app.js"]
 
 เปิดเทอร์มินัล (Terminal) แล้วไปที่ root directory ของโปรเจ็กต์แล้วใช้คำสั่งต่อไปนี้:
 
-bash
-Copy code
+``` bash
 docker build -t your-image-name:tag .
+```
 คำสั่งนี้จะสร้าง Docker image จาก Dockerfile ที่คุณสร้าง โปรดแทน your-image-name:tag ด้วยชื่อและแท็กที่คุณต้องการ.
 
 ทดสอบ Docker Image ที่สร้าง:
 
 ใช้คำสั่ง Docker run เพื่อทดสอบ Docker image ที่คุณสร้าง:
 
-bash
-Copy code
+``` bash
 docker run -p 3000:3000 -d your-image-name:tag
+```
 ในที่นี้, -p 3000:3000 คือการ map พอร์ตของ container (3000) ไปยังพอร์ตของเครื่อง (3000). -d ใช้ในการรัน container ใน background.
 
 เช็คการทำงานของ Docker Container:
@@ -60,14 +60,14 @@ Push Docker Image ไปยัง Docker Registry:
 
 หากคุณต้องการนำ Docker image ขึ้น Docker Registry เช่น Docker Hub, คุณต้องทำการล็อกอินกับ Docker Hub ก่อน:
 
-bash
-Copy code
+``` bash
 docker login
+```
 จากนั้น, ใช้คำสั่ง docker push เพื่อส่ง Docker image ขึ้น Docker Registry:
 
-bash
-Copy code
+``` bash
 docker push your-docker-hub-username/your-image-name:tag
+```
 หลังจากนั้น, Docker image ของคุณจะถูกอัปโหลดไปยัง Docker Registry และสามารถเข้าถึงได้จากเครื่องอื่น ๆ ที่มี Docker.
 
 คำสั่งทั้งหมดนี้ทำให้คุณสามารถสร้าง Docker image, ทดสอบ, และนำขึ้น Docker Registry ได้. อย่าลืมปรับแต่ง Dockerfile ตามความต้องการของโปรเจ็กต์ Express.js ของคุณ.
