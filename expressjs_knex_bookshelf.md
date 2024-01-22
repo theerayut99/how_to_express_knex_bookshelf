@@ -32,7 +32,7 @@ module.exports = {
 
 ในไฟล์ Express.js (app.js หรือ server.js), import Knex และใช้ Knex เพื่อสร้าง connection กับ Microsoft SQL Server. จากนั้น, import Bookshelf และทำการติดตั้ง Knex เข้ากับ Bookshelf:
 
-``` bash javascript
+``` js client
 const express = require('express');
 const knexConfig = require('./Knexfile');
 const knex = require('knex')(knexConfig);
@@ -43,7 +43,7 @@ const app = express();
 ### สร้าง Model ด้วย Bookshelf:
 
 สร้าง Model สำหรับแทนตารางในฐานข้อมูล. ตัวอย่างนี้ให้สร้าง Model สำหรับตาราง "users":
-``` bash javascript
+``` js client
 // models/User.js
 const bookshelf = require('../path/to/bookshelf-instance');
 
@@ -56,7 +56,7 @@ module.exports = User;
 ### สร้าง Controller สำหรับ API CRUD:
 
 สร้าง Controller ที่จะใช้ในการจัดการรีเควสที่เข้ามา และใช้ Model เพื่อทำ CRUD:
-``` bash javascript
+``` js client
 // controllers/UserController.js
 const User = require('../path/to/User-model');
 
@@ -139,7 +139,7 @@ module.exports = {
 ### กำหนด Route ใน Express.js:
 
 กำหนด route ใน Express.js เพื่อให้ API CRUD ทำงาน:
-``` bash javascript
+``` js client
 // routes/api.js
 const express = require('express');
 const router = express.Router();
@@ -156,7 +156,7 @@ module.exports = router;
 ### เรียกใช้ Route ใน Express.js:
 
 เรียกใช้ route ที่เราได้กำหนดใน Express.js:
-``` bash javascript
+``` js client
 // app.js or server.js
 const express = require('express');
 const apiRoutes = require('./path/to/routes/api');
