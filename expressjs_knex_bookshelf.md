@@ -30,22 +30,22 @@ module.exports = {
   },
 };
 ```
-สร้าง Connection ใน Express.js:
+### สร้าง Connection ใน Express.js:
 
 ในไฟล์ Express.js (app.js หรือ server.js), import Knex และใช้ Knex เพื่อสร้าง connection กับ Microsoft SQL Server. จากนั้น, import Bookshelf และทำการติดตั้ง Knex เข้ากับ Bookshelf:
-javascript
-Copy code
+
+``` bash javascript
 const express = require('express');
 const knexConfig = require('./Knexfile');
 const knex = require('knex')(knexConfig);
 const bookshelf = require('bookshelf')(knex);
 
 const app = express();
-สร้าง Model ด้วย Bookshelf:
+```
+### สร้าง Model ด้วย Bookshelf:
 
 สร้าง Model สำหรับแทนตารางในฐานข้อมูล. ตัวอย่างนี้ให้สร้าง Model สำหรับตาราง "users":
-javascript
-Copy code
+``` bash javascript
 // models/User.js
 const bookshelf = require('../path/to/bookshelf-instance');
 
@@ -54,11 +54,11 @@ const User = bookshelf.model('User', {
 });
 
 module.exports = User;
-สร้าง Controller สำหรับ API CRUD:
+```
+### สร้าง Controller สำหรับ API CRUD:
 
 สร้าง Controller ที่จะใช้ในการจัดการรีเควสที่เข้ามา และใช้ Model เพื่อทำ CRUD:
-javascript
-Copy code
+``` bash javascript
 // controllers/UserController.js
 const User = require('../path/to/User-model');
 
@@ -137,11 +137,11 @@ module.exports = {
   updateUser,
   deleteUser,
 };
-กำหนด Route ใน Express.js:
+```
+### กำหนด Route ใน Express.js:
 
 กำหนด route ใน Express.js เพื่อให้ API CRUD ทำงาน:
-javascript
-Copy code
+``` bash javascript
 // routes/api.js
 const express = require('express');
 const router = express.Router();
@@ -154,11 +154,11 @@ router.put('/users/:id', userController.updateUser);
 router.delete('/users/:id', userController.deleteUser);
 
 module.exports = router;
-เรียกใช้ Route ใน Express.js:
+```
+### เรียกใช้ Route ใน Express.js:
 
 เรียกใช้ route ที่เราได้กำหนดใน Express.js:
-javascript
-Copy code
+``` bash javascript
 // app.js or server.js
 const express = require('express');
 const apiRoutes = require('./path/to/routes/api');
@@ -172,7 +172,8 @@ const port = 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-รันแอปพลิเคชัน:
+```
+### รันแอปพลิเคชัน:
 
 รัน Express.js และทดสอบการใช้ API CRUD ในเบราว์เซอร์หรือโปรแกรม API testing
 ขั้นตอนนี้ทำให้คุณสามารถใช้ Express.js, Knex.js และ Bookshelf.js เพื่อสร้าง API CRUD ที่เชื่อมต่อกับฐานข้อมูล Microsoft SQL Server ได้. คุณสามารถปรับแต่ง Model, Controller, และ route ตามความต้องการของโปรเจ็กต์ของคุณ.
