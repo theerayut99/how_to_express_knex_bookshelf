@@ -3,15 +3,13 @@
 ### ติดตั้ง Knex, Bookshelf และ mssql Driver:
 
 ใช้ npm เพื่อติดตั้ง Knex, Bookshelf และ mssql driver (หรือ driver ที่เหมาะสมกับฐานข้อมูลที่คุณใช้):
-bash
-Copy code
-``` bash
+``` js client
 npm install knex bookshelf mssql
 ```
 ### สร้างไฟล์ Knexfile.js:
 
 สร้างไฟล์ Knexfile.js ใน root directory ของโปรเจ็กต์ของคุณ. ไฟล์นี้จะใช้กำหนดค่าการเชื่อมต่อฐานข้อมูล:
-``` bash javascript
+``` js client
 // Knexfile.js
 module.exports = {
   client: 'mssql',
