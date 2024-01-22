@@ -29,13 +29,13 @@ CMD ["node", "app.js"]
 ```
 ### ใน Dockerfile นี้:
 
-เราใช้ภาพ Node.js 14 เป็นภาพหลัก.
-กำหนด working directory ใน container.
-คัดลอก package.json และ package-lock.json แล้วติดตั้ง dependencies.
-คัดลอกโค้ดทั้งหมดของแอปพลิเคชัน.
-เปิดพอร์ต 3000 (ค่าที่คุณใช้ในแอปพลิเคชัน Express.js).
-กำหนดคำสั่งที่จะให้ Docker รันเมื่อ container ถูกสร้าง.
-สร้าง Docker Image:
+- เราใช้ Image Node.js 14 เป็น Image หลัก.  
+- กำหนด working directory ใน container.
+- คัดลอก package.json และ package-lock.json แล้วติดตั้ง dependencies.  
+- คัดลอกโค้ดทั้งหมดของแอปพลิเคชัน.  
+- เปิดพอร์ต 3000 (ค่าที่คุณใช้ในแอปพลิเคชัน Express.js).  
+- กำหนดคำสั่งที่จะให้ Docker รันเมื่อ container ถูกสร้าง.  
+### สร้าง Docker Image:
 
 เปิดเทอร์มินัล (Terminal) แล้วไปที่ root directory ของโปรเจ็กต์แล้วใช้คำสั่งต่อไปนี้:
 
