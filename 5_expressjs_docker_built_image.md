@@ -1,6 +1,6 @@
 การสร้าง Dockerfile สำหรับโปรเจ็กต์ Express.js API เป็นขั้นตอนที่สำคัญเพื่อนำโปรเจ็กต์ของคุณไปรันบน Docker container หรือนำขึ้น Docker Registry สามารถทำได้ตามขั้นตอนต่อไปนี้:
 
-สร้าง Dockerfile:
+### สร้าง Dockerfile:
 
 สร้างไฟล์ Dockerfile ใน root directory ของโปรเจ็กต์ของคุณ:
 
@@ -27,7 +27,7 @@ EXPOSE 3000
 # Define the command to run your application
 CMD ["node", "app.js"]
 ```
-ใน Dockerfile นี้:
+### ใน Dockerfile นี้:
 
 เราใช้ภาพ Node.js 14 เป็นภาพหลัก.
 กำหนด working directory ใน container.
@@ -44,7 +44,7 @@ docker build -t your-image-name:tag .
 ```
 คำสั่งนี้จะสร้าง Docker image จาก Dockerfile ที่คุณสร้าง โปรดแทน your-image-name:tag ด้วยชื่อและแท็กที่คุณต้องการ.
 
-ทดสอบ Docker Image ที่สร้าง:
+### ทดสอบ Docker Image ที่สร้าง:
 
 ใช้คำสั่ง Docker run เพื่อทดสอบ Docker image ที่คุณสร้าง:
 
@@ -53,7 +53,7 @@ docker run -p 3000:3000 -d your-image-name:tag
 ```
 ในที่นี้, -p 3000:3000 คือการ map พอร์ตของ container (3000) ไปยังพอร์ตของเครื่อง (3000). -d ใช้ในการรัน container ใน background.
 
-เช็คการทำงานของ Docker Container:
+### เช็คการทำงานของ Docker Container:
 
 เปิดเว็บเบราว์เซอร์และเข้าถึง http://localhost:3000 เพื่อดูว่า Express.js API ทำงานได้ถูกต้องหรือไม่.
 Push Docker Image ไปยัง Docker Registry:
