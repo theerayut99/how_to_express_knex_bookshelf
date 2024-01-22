@@ -9,8 +9,7 @@ npm install knex bookshelf mssql
 สร้างไฟล์ Knexfile.js:
 
 สร้างไฟล์ Knexfile.js ใน root directory ของโปรเจ็กต์ของคุณ. ไฟล์นี้จะใช้กำหนดค่าการเชื่อมต่อฐานข้อมูล:
-javascript
-Copy code
+``` bash javascript
 // Knexfile.js
 module.exports = {
   client: 'mssql',
@@ -28,6 +27,7 @@ module.exports = {
     enableArithAbort: true,
   },
 };
+```
 สร้าง Connection ใน Express.js:
 
 ในไฟล์ Express.js (app.js หรือ server.js), import Knex และใช้ Knex เพื่อสร้าง connection กับ Microsoft SQL Server. จากนั้น, import Bookshelf และทำการติดตั้ง Knex เข้ากับ Bookshelf:
